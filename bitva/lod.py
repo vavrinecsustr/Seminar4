@@ -35,10 +35,12 @@ class Lod:
             if self._trup < 0:
                 self._trup = 0
                 zprava = f'{zprava[:-1]} a byla znicena.'
+        else:
+            zprava = f'{self._jmeno} odrazil utok stity.'
+        self.nastav_zpravu(zprava)
 
     def nastav_zpravu(self, zprava):
         self._zprava = zprava
 
     def vypis_zpravu(self):
         return self._zprava
-        
