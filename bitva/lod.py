@@ -21,6 +21,9 @@ class Lod:
     def __str__(self):
         return str(self._jmeno)
 
+    def je_operacni(self):
+        return self._trup > 0
+        
     def utoc(self, souper):
         uder = self._utok + self._kostka.hod()
         zprava = f'{self._jmeno} pali kanony za {uder}hp.'
