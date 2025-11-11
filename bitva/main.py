@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 from kostka import Kostka 
-from lod import Lod 
+from lod import Lod, Karen
 
 class Sektor:
 
@@ -24,7 +24,7 @@ class Sektor:
 
     def _vypis_lod(self, lod):
         print(lod)
-        print(f'Trup: {lod._trup}\n')
+        print(f'Trup: {lod.graficky_trup()}\n')
 
     def _vykresli(self):
         self._vycisti()
@@ -72,11 +72,12 @@ class Sektor:
 if __name__ == '__main__':
     k = Kostka(10)
     lodicka = Lod("Bloody Mary", 67, 80, 10, k)
-    clun = Lod("Gumotex", 420, 20 , 25, k)
+    clun = Lod("Gumotex", 350, 20 , 25, k)
+    fighter = Karen("Karen", 90, 50, 60, k, 30, 90)
     orion = Sektor(lodicka, clun, k)
 
     orion = Sektor(lodicka, clun, k, "Orion")
-    gamma = Sektor(lodicka, clun, k, "Gamma")
+    gamma = Sektor(lodicka, fighter, k, "Gamma")
 
     orion.souboj()
     gamma.souboj()

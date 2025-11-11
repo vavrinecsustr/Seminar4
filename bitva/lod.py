@@ -23,6 +23,14 @@ class Lod:
 
     def je_operacni(self):
         return self._trup > 0
+    
+    def graficky_trup(self):
+        celkem = 20
+        pocet = int(self._trup / self._max_trup * celkem)
+        if pocet == 0 and self.je_operacni:
+            pocet = 1
+        return f"[{'#'*pocet}{' '*(celkem-pocet)}]"
+
         
     def utoc(self, souper):
         uder = self._utok + self._kostka.hod()
@@ -47,3 +55,25 @@ class Lod:
 
     def vypis_zpravu(self):
         return self._zprava
+
+class Karen(Lod):
+    """
+    Odvozena trida, ktera pridava energii pro laserovy vyvoj
+    Demonstruje dedicnost, polymorfismus a pretizeni metody
+    """
+
+    def __init__(self, jmeno, trup, utok, stit, kostka, energie, laserovy_utok):
+        super().__init__(jmeno, trup, utok, stit, kostka)
+        self._energie = energie
+        self._max_energie = energie
+        self._laserovy_utok = laserovy_utok
+
+    def utoc(self, souper):
+        if self._energie < self._max_energie:
+            self._energie = min(self._max_energie, self._energie + 10)
+            super().utoc(souper)
+        else:
+            uder = self._laserovy_utok + self._kostka.hod()
+            self.nastav_zpravu(f'{self._jmeno} utoci laserem o sile{uder} hp.')
+            self._energie = 0
+            souper.bran_se(uder)
