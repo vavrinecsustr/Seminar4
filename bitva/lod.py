@@ -24,13 +24,15 @@ class Lod:
     def je_operacni(self):
         return self._trup > 0
     
-    def graficky_trup(self):
+    def graficky_ukazatel(self, aktualni, maximalni):
         celkem = 20
-        pocet = int(self._trup / self._max_trup * celkem)
+        pocet = int(aktualni / maximalni * celkem)
         if pocet == 0 and self.je_operacni:
             pocet = 1
         return f"[{'#'*pocet}{' '*(celkem-pocet)}]"
 
+    def graficky_trup(self):
+        return self.graficky_ukazatel(self._trup, self._max_trup)
         
     def utoc(self, souper):
         uder = self._utok + self._kostka.hod()
@@ -77,3 +79,21 @@ class Karen(Lod):
             self.nastav_zpravu(f'{self._jmeno} utoci laserem o sile{uder} hp.')
             self._energie = 0
             souper.bran_se(uder)
+
+    def graficka_energie(self):
+        return self.graficky_ukazatel(self._energie, self._max_energie)
+
+class Babeta(Lod):
+    """
+    Odvozena trida, ktera ma vetsi stitovou obranu
+    """
+    def bran_se(self, uder):
+        poskozeni = uder - (self._stit + self._kostka.hod() + 2)
+        if poskozeni > 0:
+            zprava = f'{self._jmeno} utrpela zasah o sile {poskozeni} hp.'
+            self._trup -= poskozeni
+            if self._trup < 0:
+                self._trup = 0
+                self.nastav_zpravu(f'{self._jmeno} a byla znicena.')
+        else:
+            self.nastav_zpravu(f'{self._jmeno} zcela pohltila utok adaptivnimi stity.')
