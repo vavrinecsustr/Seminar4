@@ -1,0 +1,39 @@
+event_id,Unique identifier of the incident.
+timestamp_utc,Date and time of the event in UTC.
+country,"Country where the incident was recorded."
+region,Geographical region corresponding to the country.
+city,"City where the event originated or was detected."
+site_code,Internal site code in the format COUNTRY-XYZ.
+latitude,Latitude associated with the city.
+longitude,Longitude associated with the city.
+agent_id,Identifier of the agent handling the incident.
+agent_rank,Rank or role of the agent.
+agent_clearance,Agent's security clearance level.
+team_id,ID of the team investigating the incident.
+operation_id,"Identifier of the operation the incident falls under."
+operation_codename,Operation codename.
+operation_type,Type of suspicious activity.
+target_sector,"Sector affected by the incident."
+target_importance_score,Target organization's importance rating (1–10).
+target_risk_level,Risk classification for the incident.
+intel_source_primary,Primary intelligence source.
+intel_source_secondary,Secondary intelligence source.
+intel_confidence_score,Confidence score of the intelligence sources.
+threat_score_overall,Overall threat calculated from risk components.
+threat_financial,Financial risk of the incident.
+threat_cyber,Cyber risk of the incident.
+threat_physical,Physical risk of the incident.
+money_moved_usd,Estimated money moved as part of the incident.
+records_exfiltrated,Number of stolen or exfiltrated records.
+compromised_accounts,Number of compromised accounts.
+channel_email,Whether actors communicated via email (Y/N).
+channel_phone,Whether actors communicated via phone (Y/N).
+channel_darknet,Whether actors communicated via darknet (Y/N).
+channel_field_meet,Whether an in-person field meeting occurred (Y/N).
+status,Current processing status of the incident.
+triage_priority,Incident priority based on urgency (P1–P3).
+requires_manual_review,Whether manual verification is required (Y/N).
+escalated_to_level,Escalation level of the incident.
+false_positive_flag,Indication of a false alarm (Y/N).
+model_version,"Version of the analytical model that processed the data."
+notes_short,Short analyst note or comment.

@@ -1,0 +1,39 @@
+event_id,Jedinečný identifikátor incidentu.
+timestamp_utc,Datum a čas události v UTC.
+country,"Stát, kde byl incident zaznamenán."
+region,Geografický region odpovídající dané zemi.
+city,"Město, kde událost vznikla nebo byla detekována."
+site_code,Interní kód místa ve formátu COUNTRY-XYZ.
+latitude,Zeměpisná šířka spojená s městem.
+longitude,Zeměpisná délka spojená s městem.
+agent_id,Identifikátor agenta zpracovávajícího incident.
+agent_rank,Hodnost nebo role agenta.
+agent_clearance,Úroveň bezpečnostní prověrky agenta.
+team_id,ID týmu vyšetřujícího incident.
+operation_id,"Identifikátor operace, pod kterou incident spadá."
+operation_codename,Krycí název operace.
+operation_type,Typ podezřelé aktivity.
+target_sector,"Sektor, který byl incidentem zasažen."
+target_importance_score,Hodnocení významu cílové organizace (1–10).
+target_risk_level,Klasifikace rizika pro daný incident.
+intel_source_primary,Primární zpravodajský zdroj.
+intel_source_secondary,Sekundární zpravodajský zdroj.
+intel_confidence_score,Důvěryhodnost informací zpravodajských zdrojů.
+threat_score_overall,Celkové ohrožení vypočtené ze složek rizika.
+threat_financial,Finanční riziko incidentu.
+threat_cyber,Kybernetické riziko incidentu.
+threat_physical,Fyzické riziko incidentu.
+money_moved_usd,Odhad přesunutých peněz v rámci incidentu.
+records_exfiltrated,Počet odcizených nebo uniklých záznamů.
+compromised_accounts,Počet kompromitovaných účtů.
+channel_email,Zda aktéři komunikovali emailem (Y/N).
+channel_phone,Zda aktéři komunikovali telefonem (Y/N).
+channel_darknet,Zda aktéři komunikovali přes darknet (Y/N).
+channel_field_meet,Zda došlo k osobnímu setkání v terénu (Y/N).
+status,Aktuální stav zpracování incidentu.
+triage_priority,Priorita incidentu dle urgentnosti (P1–P3).
+requires_manual_review,Zda je potřeba ruční ověření (Y/N).
+escalated_to_level,Úroveň eskalace incidentu.
+false_positive_flag,Indikace falešného poplachu (Y/N).
+model_version,"Verze analytického modelu, který data zpracoval."
+notes_short,Krátká poznámka nebo komentář analytika.
