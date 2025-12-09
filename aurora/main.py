@@ -79,12 +79,12 @@ def parse_args():
     p.add_argument('--max-threat', type=int, help="Maximum overall threat score")
     p.add_argument('--min-money', type=int, help="Minimum money-moved-usd")
 
-    p.add_argument('--channel-darknet', action='store_true', help="Ohly include events with channel_darknet=Y")
+    p.add_argument('--channel-darknet', action='store-true', help="Ohly include events with channel_darknet=Y")
 
     p.add_argument('--sort-by', help="Comma separated list of columns to sort by")
-    p.add_argument('--sort-desc', action='store_true', help="Sort in descending order")
+    p.add_argument('--sort-desc', action='store-true', help="Sort in descending order")
 
-    p.add_argument('--summary-only', action='store_true', help ="Do not write CSV, only print summary")
+    p.add_argument('--summary-only', action='store-true', help ="Do not write CSV, only print summary")
 
     return p
 
